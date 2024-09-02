@@ -1,0 +1,42 @@
+/* main.scss */
+
+/* Importando variáveis e mixins primeiro */
+@use "./components/variables";
+
+/* Importando componentes */
+@use "./components/hero";
+@use "./components/infos_bar";
+@use "./components/event";
+@use "./components/buttons";
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: "Playwrite CU", sans-serif;
+  color: variables.$text-color;
+  list-style: none;
+}
+
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+body {
+  font-size: 1.6rem; /* Isto equivale a 16px */
+}
+
+.container {
+  max-width: 96rem;
+  width: 100%;
+  margin: 0 auto;
+
+  @media (max-width: 640px) {
+    max-width: 80%;
+  }
+
+  @media (max-width: 1024px) {
+    max-width: 90%;
+  }
+}

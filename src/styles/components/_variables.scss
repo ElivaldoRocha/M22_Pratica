@@ -1,0 +1,15 @@
+/* _variables.scss */
+
+$primary-color: #4facfe; // Tom de azul principal
+$secondary-color: #00f2fe; // Tom de azul secundário
+$text-color: #000; // Cor do texto
+$text-color-2: #fff; // Cor do texto
+$text-color-bold: #2c9afa; // Cor do texto
+$background-gradient: linear-gradient(
+  $primary-color,
+  $secondary-color
+); // Gradiente de fundo
+$background-gradient-two: linear-gradient(
+  $secondary-color,
+  $primary-color
+); // Gradiente de fundo

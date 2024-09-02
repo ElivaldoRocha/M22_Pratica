@@ -1,0 +1,127 @@
+/* _event.scss */
+/* Importando variáveis e mixins primeiro */
+@use "./variables";
+
+.event {
+  background-color: variables.$secondary-color;
+  padding: 8rem 0;
+  border-radius: 8px;
+  color: variables.$text-color;
+  background-image: variables.$background-gradient-two;
+  display: flex;
+  justify-content: space-between; /* Espaça o texto e a imagem */
+  align-items: center; /* Alinha verticalmente o conteúdo da seção */
+  gap: 2rem; /* Adiciona espaço entre os elementos */
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  &__details {
+    flex: 1; /* Permite que o texto ocupe todo o espaço disponível */
+    display: flex;
+    flex-direction: column; /* Organiza título e descrição em coluna */
+    max-width: 50%; /* Limita a largura do texto para se alinhar com a imagem */
+  }
+
+  &__details__title {
+    color: variables.$text-color-2;
+    font-size: 2.8rem;
+    margin-bottom: 1rem; /* Espaço entre o título e a descrição */
+  }
+
+  &__details__description {
+    font-size: 1.6rem;
+    color: #333;
+  }
+
+  &__image {
+    width: 20%;
+    max-width: 20%; /* Limita a largura da imagem para se alinhar ao lado direito */
+    border-radius: 1.6rem;
+    flex-shrink: 0; /* Impede que a imagem seja reduzida */
+  }
+
+  &__details {
+    &_title {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    &__description {
+      margin-top: 1.6rem;
+      line-height: 2.2rem;
+    }
+  }
+
+  // Responsividade para tablets
+  @media (max-width: 1024px) and (min-width: 768px) {
+    margin: 1rem;
+
+    &__image {
+      max-width: 60%; // Ajuste do tamanho da imagem
+      margin: 0 auto;
+    }
+
+    &__details {
+      margin-right: 1rem; // Ajuste das margens
+    }
+  }
+
+  // Responsividade para celulares
+  @media (max-width: 767px) {
+    flex-direction: column; // Muda a direção para coluna (stack)
+    align-items: center; // Centraliza os itens
+    text-align: center;
+
+    .container {
+      display: block;
+      gap: 4rem;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__details {
+      margin: 0 auto;
+      margin-bottom: 1.6rem;
+      justify-content: center;
+      align-items: center;
+      text-align: justify; // Garante que o texto também fique centralizado
+    }
+
+    &__description {
+      text-align: center;
+    }
+
+    &__image {
+      // max-width: 36rem;
+      width: 50%;
+      max-width: none;
+    }
+  }
+}
+
+.event--food {
+  background-image: variables.$background-gradient;
+}
+
+.event--playground {
+  background-image: variables.$background-gradient-two;
+}
+
+.event--games {
+  background-image: variables.$background-gradient;
+}
+
+.event--image-left {
+  .container {
+    flex-direction: row-reverse;
+  }
+
+  .event__image {
+    margin-right: 2rem;
+  }
+}
